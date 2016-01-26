@@ -1,6 +1,7 @@
 ---
 name: just_install_packages
-packages: []
+packages:
+- redis
 templates:
   ignoreme: ignoreme
 properties: {}

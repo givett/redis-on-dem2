@@ -29,8 +29,8 @@ networks:
 - name: redis_on_dem21
   type: manual
   subnets:
-  - range: 10.244.2.0/24
+  - range: 10.244.9.0/24
     name: redis_on_dem21
-    gateway: 10.244.2.1
+    gateway: 10.244.9.1
     static:
-      - 10.244.2.2-10.244.2.60
+      - 10.244.9.2-10.244.9.60
