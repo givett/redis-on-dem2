@@ -9,8 +9,17 @@ CPUS=$(grep -c ^processor /proc/cpuinfo)
 export HOME=/var/vcap
 
 tar xfv redis/redis-3.0.6.tar.gz
-cd redis-3.0.6
-make
 
-cp src/* ${BOSH_INSTALL_TARGET}/
+if [[ $? != 0 ]] ; then
+  echo "Failed extracting redis"
+  exit 1
+fi
+
+(
+  cd redis-3.0.6
+  make
+  make PREFIX=$BOSH_INSTALL_TARGET install
+)
+
+# cp src/* ${BOSH_INSTALL_TARGET}/
 #
