@@ -3,5 +3,6 @@ name: redis
 packages:
 - redis
 templates:
-  redis_ctl: bin/redis_ctl
-  redis.conf.erb: config/redis.conf
+  bin/redis_ctl: bin/redis_ctl
+  bin/monit_debugger: bin/monit_debugger
+  config/redis.conf.erb: config/redis.conf
