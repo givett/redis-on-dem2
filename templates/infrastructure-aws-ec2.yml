@@ -9,9 +9,9 @@ meta:
     version: latest
 
 jobs:
-  - name: just_install_packages
+  - name: redis
     networks:
-      - name: redis_on_dem21
+      - name: redis_on_dem2
     persistent_disk: (( grab meta.persistent_disk ))
 
 compilation:

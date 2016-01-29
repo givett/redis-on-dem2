@@ -4,8 +4,16 @@ packages:
 - redis
 templates:
   bin/redis_ctl: bin/redis_ctl
+  bin/health_check: bin/health_check
   bin/monit_debugger: bin/monit_debugger
   data/properties.sh: data/properties.sh
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
-  config/redis.conf.erb: config/redis.conf
+  config/redis.conf: config/redis.conf
+properties:
+  health.disk.critical:
+    description: Percentage of persistent disk full to trigger critical health alert
+    default: 98
+  health.disk.warning:
+    description: Percentage of persistent disk full to trigger warning health alert
+    default: 50
